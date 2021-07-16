@@ -4,7 +4,7 @@
 class Conta
 {
     private $titular;
-    private $saldo;
+    protected $saldo;
     private static $numeroDeContas = 0;
 
     public function __construct(Titular $titular)
@@ -63,6 +63,11 @@ class Conta
     public function getSaldo(): float
     {
         return $this->saldo;
+    }
+
+    public function setNome(String $nome){
+        $this->nome = $nome;
+        return $this->nome;
     }
 
     public static function recuperaNumeroDeContas(): int
